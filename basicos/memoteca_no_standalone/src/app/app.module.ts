@@ -8,6 +8,8 @@ import { RodapeComponent } from './componentes/rodape/rodape.component';
 import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensamento/criar-pensamento.component';
 import { ListarPensamentosComponent } from './componentes/pensamentos/listar-pensamentos/listar-pensamentos.component';
 import { PensamentoComponent } from './componentes/pensamentos/pensamento/pensamento.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ExcluirPensamentoComponent } from './componentes/pensamentos/excluir-pensamento/excluir-pensamento.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { PensamentoComponent } from './componentes/pensamentos/pensamento/pensam
     RodapeComponent,
     CriarPensamentoComponent,
     ListarPensamentosComponent,
-    PensamentoComponent
+    PensamentoComponent,
+    ExcluirPensamentoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
