@@ -5,14 +5,14 @@
       "conteudo": "Estudando CRUD, desenvolvimento do UPDATE",
       "autoria": "Aislan Lima",
       "modelo": "modelo2",
-      "favorito": false
+      "favorito": true
     },
     {
       "id": 2,
       "conteudo": "Angular é o melhor'",
       "autoria": "Dev Alura",
       "modelo": "modelo3",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 3,
