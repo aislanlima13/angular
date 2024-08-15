@@ -1,22 +1,25 @@
 {
   "pensamentos": [
     {
-      "id": 2,
+      "id": 1,
       "conteudo": "Estudando CRUD, desenvolvimento do UPDATE",
       "autoria": "Aislan Lima",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": false
+    },
+    {
+      "id": 2,
+      "conteudo": "Angular é o melhor'",
+      "autoria": "Dev Alura",
+      "modelo": "modelo3",
+      "favorito": true
     },
     {
       "id": 3,
-      "conteudo": "Angular é o melhor'",
-      "autoria": "Dev Alura",
-      "modelo": "modelo3"
-    },
-    {
       "conteudo": "Teste 1",
       "autoria": "Funcionalidade CRUD - 01",
       "modelo": "modelo1",
-      "id": 4
+      "favorito": false
     }
   ]
 }
