@@ -1,4 +1,4 @@
-export interface Livro {
+export  interface Livro {
     title?: string;
     authors?: string[];
     publisher?: string;
@@ -27,13 +27,9 @@ export interface VolumeInfo {
     canonicalVolumeLink: string;
 }
 
-export interface ImageLinks {
+export interface  ImageLinks {
     smallThumbnail: string;
-    thumbnail: string;
-    small: string;
-    medium: string;
-    large: string;
-    extraLarge: string;
+    thumbnail: string
 }
 
 export interface Item {
