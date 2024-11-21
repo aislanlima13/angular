@@ -4,7 +4,10 @@
       Criar nova tarefa
     </button>
   </div>
-  <form @showState class="formulario ff-prompt"
+  <form
+    [@shakeAnimation]="formulario.value"
+    @showState class="formulario ff-prompt"
+    [@formButton]="formulario.valid ? 'valid' : 'invalid'"
     [formGroup]="formulario"
     *ngIf="formAberto">
     <label for="descricao">Descrição da tarefa</label>
@@ -68,10 +71,16 @@
     <img src="assets/imagens/ilustracao-Tarefas.png"
         alt="Ilustração de um ambiente com mesa, computador, quadro e um vaso com planta">
   </div>
-  <div *ngIf="listaTarefas.length > 0, else semTarefas">
+  <div class="busca">
+    <p class="ff-prompt">Procurando o que fazer?</p>
+    <input type="search" id="campo-busca" placeholder="Busque por uma tarefa" [(ngModel]="campoBusca"
+    (keyup)="filtrarTarefasPorDescricao(campoBusca)">
+  </div>
+  <div *ngIf="tarefasFiltradas.length > 0, else semTarefas">
     <div
+      @filterAnimation
       class="lista-tarefas card-{{ tarefa.categoria }}"
-      *ngFor="let tarefa of listaTarefas; let i = index"
+      *ngFor="let tarefa of tarefasFiltradas; let i = index"
       (mouseover)="indexTarefa = i"
       [@highlightedState]="indexTarefa === i ? 'highlighted' : 'default'">
       <div class="info-card">
@@ -87,8 +96,8 @@
         <p class="status-tarefa">
           <button
             [ngClass]="(tarefa.statusFinalizado == true) ? 'icone-checked' : 'icone-unchecked'"
-            (click)="finalizarTarefa(tarefa.id);"
-            [@checkButton]="(tarefa.id === id ? 'checked' : 'unchecked')"
+            (click)="finalizarTarefa(tarefa);"
+            [@checkButton]="tarefa.id === id && estadoBotao"
             >
           </button>
         </p>
@@ -106,7 +115,7 @@
             <img src="assets/icones/icone-editar.png" alt="Ícone de editar">
           </button>
           <button
-            (click)="excluirTarefa(tarefa.id)"
+            (click)="excluirTarefa(tarefa)"
             class="botao-deletar">
             <img src="assets/icones/icone-excluir.png" alt="Ícone de excluir">
           </button>
